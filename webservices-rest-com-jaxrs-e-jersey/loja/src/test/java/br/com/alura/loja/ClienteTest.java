@@ -5,6 +5,9 @@ import javax.ws.rs.client.WebTarget;
 
 import org.junit.Test;
 
+import com.thoughtworks.xstream.XStream;
+
+import br.com.alura.loja.modelo.Carrinho;
 import junit.framework.Assert;
 
 public class ClienteTest {
@@ -14,8 +17,10 @@ public class ClienteTest {
 		Client client=ClientBuilder.newClient();
 		WebTarget target=client.target("http://www.mocky.io");
 		String conteudo=target.path("/v2/52aaf5deee7ba8c70329fb7d").request().get(String.class);
-		Assert.assertEquals(conteudo.contains("<rua>Rua Vergueiro 3185"), false);
-		System.out.println();
+		Carrinho carrinho=(Carrinho) new XStream().fromXML(conteudo);
+		System.out.println(carrinho);
+		//Assert.assertEquals("Rua Vergueiro 3185, 8 andar", carrinho.getRua());
+		
 	}
 	
 
