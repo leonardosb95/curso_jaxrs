@@ -1,0 +1,114 @@
+Aula01- Serviços Web REST e Addressability
+
+
+VIDEO 01-Serviços Web REST e Addressability
+
+	web services rest
+	cada carrinho representa uma  uri diferente
+	html enviado do servidor para o cliente
+	servidores disponibilzam um outro formato mais facil da maquina entender
+		formato XML
+			enviado de um lado para o outro
+		temos diversas media types que podemos trabalhar
+		
+	baixar os jars-rs e jersey
+	para testar se acessar URI é criar um programa cliente
+		programa que se comunica com outro
+		@Test
+			é um teste
+			Client
+				ClientBuilder
+					cria um cliente
+				target
+					path
+						para onde queremos fazer o request
+						request.get(String.class)
+							devolve uma string
+							
+
+
+Criando servidor
+
+	DAO
+		acessa o banco de dados
+	recurso
+		busca no banco de dados
+		traz as coisas para mim
+			mostra para o cliente o XML
+		todo recurso tem a anotação
+			@Path
+	no servidor podemos devolver o XML
+		@Produces
+			servidor não tem como adivinhar
+			MediaType.APPLICATION_XML
+				está produzindo o XML
+		@GET
+		
+Levantando servidor
+
+	HttpServer
+		servidor do Grizzly
+		uri base
+			localhost
+			temos que criar o localhost
+		configuração dos recursos
+			ResouceConfig
+				packages
+					passamos o pacote
+					vai usar tudo do JAX-RS para o servidor
+	
+
+
+---
+Aula02- Testes end-to-end com JAX-RS e Grizzly
+
+
+
+VIDEO 01-Testes end-to-end com JAX-RS e Grizzly
+
+	desserealizar
+		Transformar o XML em objeto
+
+	consigo criar testes clientes
+	para não ficar com retrabalho de levantar o servidor e matar o servidor
+		joga o codigo que levanta o servidor na classe de teste
+
+	@Before
+		antes de rodar cada um dos meus testes eu vou rodar o código
+	
+	@After
+		matar o servidor depois de rodar os meus testes
+
+
+
+---
+Aula03- Trabalhando com parâmetros
+
+
+VIDEO 01-Trabalhando com parâmetros
+
+	de alguma maneira falar qual é o carrinho que eu quero
+		QueryParam("id")
+			veio na minha query do GET
+		quando usamos um parametro na uri
+			/id
+			usamos a anotação @Path("{id}")
+			no metodo utilizamos o @PathParam("id")
+
+
+
+
+---
+Aula04- Gerando Json com Gson
+
+
+VIDEO 01-Gerando Json com Gson
+	trabalhar com Gson
+	é muito simples usar Gson ou XML
+
+
+
+
+
+
+

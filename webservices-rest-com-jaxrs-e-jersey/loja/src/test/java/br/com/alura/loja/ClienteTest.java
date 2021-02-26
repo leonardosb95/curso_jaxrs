@@ -30,9 +30,9 @@ public class ClienteTest {
 	public void testaQueAConexaoComServidorFunciona(){		
 		Client client=ClientBuilder.newClient();
 		 WebTarget target = client.target("http://localhost:8080");
-		  String conteudo = target.path("/carrinhos/2").request().get(String.class);
-		Carrinho carrinho=(Carrinho) new XStream().fromXML(conteudo);
-		 System.out.println(carrinho.getRua());
+		  String conteudo = target.path("/carrinhos/1").request().get(String.class);
+		//Carrinho carrinho=(Carrinho) new XStream().fromXML(conteudo);
+		 System.out.println(conteudo);
 	}
 	
 
