@@ -8,19 +8,16 @@ import org.junit.Test;
 import com.thoughtworks.xstream.XStream;
 
 import br.com.alura.loja.modelo.Carrinho;
-import junit.framework.Assert;
 
 public class ClienteTest {
 	
 	@Test
 	public void testaQueAConexaoComServidorFunciona(){		
 		Client client=ClientBuilder.newClient();
-		WebTarget target=client.target("http://www.mocky.io");
-		String conteudo=target.path("/v2/52aaf5deee7ba8c70329fb7d").request().get(String.class);
+		 WebTarget target = client.target("http://localhost:8080");
+		  String conteudo = target.path("/carrinhos/2").request().get(String.class);
 		Carrinho carrinho=(Carrinho) new XStream().fromXML(conteudo);
-		System.out.println(carrinho);
-		//Assert.assertEquals("Rua Vergueiro 3185, 8 andar", carrinho.getRua());
-		
+		 System.out.println(carrinho.getRua());
 	}
 	
 
