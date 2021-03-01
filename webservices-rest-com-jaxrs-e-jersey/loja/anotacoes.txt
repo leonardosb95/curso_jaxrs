@@ -114,6 +114,18 @@ VIDEO 01-Criando recursos e o POST
 	POST
 		cria um recurso no meu servidor
 		envia uma representação do cliente para o servidor
+		
+---
+Aula06- O protocolo HTTP por baixo dos panos
+	 cliente se comunica com o servidor
+	 	via protocolo HTTP
+	 -v
+	 	verbose
+	 		mostra o que você esta enviando para o servidor
+	 		trocando representações atraves de cabeçalhos
+	 	
+	 	
+
 
 
 
