@@ -124,6 +124,35 @@ Aula06- O protocolo HTTP por baixo dos panos
 	 		mostra o que você esta enviando para o servidor
 	 		trocando representações atraves de cabeçalhos
 	 	
+---
+Aula07- Status code e a Interface Uniforme
+	 	200
+	 		ok
+	 	500
+	 		erro interno no servidor
+	 		dentro do código deu exception
+	 	
+	 	201
+	 		recurso foi criado com sucesso
+	 	
+	 	http já devolve as respostas de status code
+	 	retornar um Response
+	 		quando colocamos .build()
+	 			ele transforma numa Response
+	 	415
+	 		O media type está errado
+	 		o servidor não entendi o status code
+	 	
+	 			
+	 	todo mundo entende status code
+	 		Essa é a vantagem
+	 		na internet todo mundo entende
+	 	
+	 	@Consumes
+	 		estou consumindo application xml
+	 		
+	 	@Produces
+	 		eu cuspo application xml
 	 	
 
 

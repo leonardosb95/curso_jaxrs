@@ -36,20 +36,21 @@ public class ClienteTest {
 		 WebTarget target = client.target("http://localhost:8080");
 		
 		Carrinho carrinho= new Carrinho();
-		carrinho.adiciona(new Produto(314L,"Teste",999,2));
+		carrinho.adiciona(new Produto(3L,"Teste",999,3));
 		carrinho.setRua("Rua Vergueiro");
 		carrinho.setCidade("São Paulo");
 		String xml=carrinho.toXML();
-		
+		//POST
        javax.ws.rs.client.Entity<String> entity=javax.ws.rs.client.Entity.entity(xml, MediaType.APPLICATION_XML);
 		Response response=target.path("/carrinhos").request().post(entity);
 		
-		//POST
+		//GET
 		Client client2=ClientBuilder.newClient();
 		 WebTarget target2 = client2.target("http://localhost:8080");
-		  String conteudo = target2.path("/carrinhos/2").request().get(String.class);
+		  //String conteudo = target2.path("/carrinhos/2").request().get(String.class);
 		//Carrinho carrinho=(Carrinho) new XStream().fromXML(conteudo);
-		 System.out.println(conteudo);
+		 Response response2=target2.path("/carrinhos/2").request().get();
+		 System.out.println(response2);
 	}
 	
 	
