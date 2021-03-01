@@ -106,6 +106,14 @@ VIDEO 01-Gerando Json com Gson
 	trabalhar com Gson
 	é muito simples usar Gson ou XML
 
+---
+Aula05- Criando recursos e o POST
+
+VIDEO 01-Criando recursos e o POST
+	Criar um recurso no meu servidor
+	POST
+		cria um recurso no meu servidor
+		envia uma representação do cliente para o servidor
 
 
 
