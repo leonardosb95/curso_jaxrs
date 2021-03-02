@@ -154,7 +154,16 @@ Aula07- Status code e a Interface Uniforme
 	 	@Produces
 	 		eu cuspo application xml
 	 	
+---
+Aula08- Idempotência
 
+	
+	Requisição GET
+		idempotência
+			podemos fazer ela varias vezes
+			que não vai fazer nada no servidor
+			não alteramos o estado da aplicação
+			podemos fazer a req quantas vezes quisermos, que não terá problema
 
 
 
