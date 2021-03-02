@@ -165,7 +165,13 @@ Aula08- Idempotência
 			não alteramos o estado da aplicação
 			podemos fazer a req quantas vezes quisermos, que não terá problema
 
+---
+Aula09-Removendo recursos e subrecursos
 
+
+	quero remover um produto daquele carrinho
+	subrecurso
+		um recurso dentro do outro
 
 
 
