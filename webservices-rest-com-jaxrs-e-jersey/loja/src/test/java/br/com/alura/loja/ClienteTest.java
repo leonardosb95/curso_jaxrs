@@ -6,6 +6,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.filter.LoggingFilter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,24 +35,32 @@ public class ClienteTest {
 	public void testaQueAConexaoComServidorFunciona(){
 		
 		Client client=ClientBuilder.newClient();
+		ClientConfig config= new ClientConfig();
+		config.register(new LoggingFilter());
+		client=ClientBuilder.newClient(config);
+		
 		 WebTarget target = client.target("http://localhost:8080");
 		
 		Carrinho carrinho= new Carrinho();
-		carrinho.adiciona(new Produto(3L,"Teste",999,3));
+		carrinho.adiciona(new Produto(4L,"Teste",999,3));
 		carrinho.setRua("Rua Vergueiro");
 		carrinho.setCidade("São Paulo");
 		String xml=carrinho.toXML();
 		//POST
        javax.ws.rs.client.Entity<String> entity=javax.ws.rs.client.Entity.entity(xml, MediaType.APPLICATION_XML);
-		Response response=target.path("/carrinhos").request().post(entity);
+		//Response response=target.path("/carrinhos").request().post(entity);
+		
+		//System.out.println(response);
 		
 		//GET
-		Client client2=ClientBuilder.newClient();
+		Client client2=ClientBuilder.newClient();		
 		 WebTarget target2 = client2.target("http://localhost:8080");
 		  //String conteudo = target2.path("/carrinhos/2").request().get(String.class);
 		//Carrinho carrinho=(Carrinho) new XStream().fromXML(conteudo);
-		 Response response2=target2.path("/carrinhos/2").request().get();
+		 Response response2=target2.path("/carrinhos/4").request().get();
+		 
 		 System.out.println(response2);
+		 
 	}
 	
 	
