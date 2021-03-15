@@ -176,6 +176,21 @@ Aula09-Removendo recursos e subrecursos
 aula11-Atualizando recursos e o PUT
 	Alterar Quantidade
 	
-	
+--
+aula12-Interface Uniforme
+	existem outros metdos http
+		patch
+			um pedaço do recurso
+		options
+			verbos e metodos
+		head
+			traz só o cabeçalgo de um get
+		trace,connect
+			são usados em outros tipos de aplicações
+		status code
+			retorna o resultado da ação
+		todo mundo no meio do caminho sabe suas ações
+			toda as APIS sabem o que uma requisição está fazendo
+		
 	
 
