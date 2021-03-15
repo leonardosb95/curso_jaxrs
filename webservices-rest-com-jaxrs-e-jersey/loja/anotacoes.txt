@@ -172,7 +172,10 @@ Aula09-Removendo recursos e subrecursos
 	quero remover um produto daquele carrinho
 	subrecurso
 		um recurso dentro do outro
-
-
-
+--
+aula11-Atualizando recursos e o PUT
+	Alterar Quantidade
+	
+	
+	
 
