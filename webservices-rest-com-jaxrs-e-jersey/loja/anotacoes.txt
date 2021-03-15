@@ -192,5 +192,38 @@ aula12-Interface Uniforme
 		todo mundo no meio do caminho sabe suas ações
 			toda as APIS sabem o que uma requisição está fazendo
 		
+--
+aula13-Deploy WAR e Servlet Contêiners
+	jogar nossa app em um container
+	temos que pegar nossa app e zipar para um arquivo .war
+	web.xml
+		configuramos o servlet do Jersey
+		dentro do pacote
+			br.com.alura.loja.resource
+			vai encontrar a classe do meu projeto
+
+	baixamos o tomcat 8
+		/bin
+			levanto e destruo o tomcat
+		/webapps
+			aonde fica minhas apps webs
+				jogamos o .war lá dentro
+		levantando o tomcat
+			/bin
+				startup.sh
+				levanta e descompacta o .war na pasta /webapps
+							
+		contexto
+			nome da app
+		cfg
+			webapi
+		é bem simples deployoar a app no servidor de container
+		
 	
+			
+
+
+
+
+
 
